@@ -70,7 +70,13 @@ def InversionCount(alist):
 ###############################################################################################
 
 
-alist = [54,26,93,17,77,31,44,55,20]
-Inversions = InversionCount(alist)
-print("The Sorted list: ", alist)
+# alist = [54,26,93,17,77,31,44,55,20]
+# alist = [54,26,100,93]
+
+# open the integerarray text file and store it as the list to sort
+text_file = open("/Users/Lee/Algorithms/1-ProgrammingAssignment/IntegerArray.txt", "r")
+list1 = text_file.readlines()
+
+Inversions = InversionCount(list1)
+print("The Sorted list: ", list1)
 print("The number of Inversions: ", Inversions)
