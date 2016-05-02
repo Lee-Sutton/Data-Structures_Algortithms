@@ -8,9 +8,13 @@
 def InversionCount(alist):
     print("Splitting ",alist)
 
-    # Define variables to hold the number of inverses that have occured
-    # Initialize this value to 0
+    # Define a variable to hold the number of inversions that occur when merging
     MergeInversions = 0
+
+    # Define variables to hold the total number of inverses that have occured
+    # This will include inversions from the left and right half
+    # Initialize this value to 0
+    totalInversions = 0
 
     # The base case if the length of the list is 1
     # return 0 for the number of inversions
@@ -53,6 +57,7 @@ def InversionCount(alist):
         k=k+1
 
     # Run through the rest of the left and right halves if these numbers are still left over
+
     while i < len(lefthalf):
         alist[k]=lefthalf[i]
         i=i+1
@@ -64,8 +69,12 @@ def InversionCount(alist):
         k=k+1
 
     print("Merging ",alist)
+
+    # add up the total number of inversions
+    totalInversions = MergeInversions + LeftInversions + RightInversions
     # Return the total number of inversions, from the left + right + mergeSort
-    return MergeInversions + LeftInversions + RightInversions
+    print("The number of inversions from this list was: ", totalInversions)
+    return totalInversions
 
 ###############################################################################################
 
@@ -74,9 +83,12 @@ def InversionCount(alist):
 # alist = [54,26,100,93]
 
 # open the integerarray text file and store it as the list to sort
-text_file = open("/Users/Lee/Algorithms/1-ProgrammingAssignment/IntegerArray.txt", "r")
+text_file = open("/Users/Lee/Algorithms/1-ProgrammingAssignment/Test.txt", "r")
 list1 = text_file.readlines()
 
-Inversions = InversionCount(list1)
-print("The Sorted list: ", list1)
+# convert all the values in list1 to integers
+int_list = [int(i) for i in list1]
+
+Inversions = InversionCount(int_list)
+print("The Sorted list: ", int_list)
 print("The number of Inversions: ", Inversions)
