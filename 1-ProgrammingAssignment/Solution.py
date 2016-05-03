@@ -43,21 +43,20 @@ def InversionCount(alist):
 
         # If the left half is less than the number in the right half store the left half number
         # Do not increment the inversion count
-        if lefthalf[i] < righthalf[j]:
+        if lefthalf[i] <= righthalf[j]:
             alist[k]=lefthalf[i]
             i=i+1
         # If the right half is less than the number in the left half store the right half number
-        # Increment the inversion counter
+        # Increment the inversion counter by how many numbers are left in the left half side
         else:
             alist[k]=righthalf[j]
             j=j+1
-            MergeInversions = MergeInversions + 1
+            MergeInversions = MergeInversions + len(lefthalf) - i
 
         # Increment K to keep moving through aList
         k=k+1
 
     # Run through the rest of the left and right halves if these numbers are still left over
-
     while i < len(lefthalf):
         alist[k]=lefthalf[i]
         i=i+1
@@ -69,11 +68,11 @@ def InversionCount(alist):
         k=k+1
 
     print("Merging ",alist)
-
+    print("The number of merge inversions from this list was: ", MergeInversions)
     # add up the total number of inversions
     totalInversions = MergeInversions + LeftInversions + RightInversions
     # Return the total number of inversions, from the left + right + mergeSort
-    print("The number of inversions from this list was: ", totalInversions)
+    print("The total number of inversions from this list was: ", totalInversions)
     return totalInversions
 
 ###############################################################################################
