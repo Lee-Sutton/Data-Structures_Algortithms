@@ -82,7 +82,7 @@ def InversionCount(alist):
 # alist = [54,26,100,93]
 
 # open the integerarray text file and store it as the list to sort
-text_file = open("/Users/Lee/Algorithms/1-ProgrammingAssignment/Test.txt", "r")
+text_file = open("/Users/Lee/Algorithms/1-ProgrammingAssignment/IntegerArray.txt", "r")
 list1 = text_file.readlines()
 
 # convert all the values in list1 to integers
