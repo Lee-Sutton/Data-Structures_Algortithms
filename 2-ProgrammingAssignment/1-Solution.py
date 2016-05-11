@@ -50,7 +50,7 @@ just type the numeric answer in the following space.)
  entire array will then be returned from the function.
 '''
 def QuickSort(array, Left, Right):
-    print("New QuickSort call")
+    print("New QuickSort call on the list: ", array[Left:Right + 1])
     # First check the base case
     # If there is no difference between the right and left limits,
     # return the 0 for the number of comparisons
@@ -83,14 +83,14 @@ def QuickSort(array, Left, Right):
     print(array)
 
     # Now call the function Recursively on the left and right halves around the partition
-    QuickSort(array, Left, i - 1)          # Left half
-    QuickSort(array, i + 1, Right)      # Right half
+    QuickSort(array, Left, i - 2)          # Left half
+    QuickSort(array, i, Right)      # Right half
 
 
 
 # Main function
 # Start by testing the function with an input array
-A = [7,3,8,9,10,14,1,24,3,6,7,4,7,10,14,26]
+A = [7,3,8,9,10,14,7,10,12,1,4,2,7,15,6,4,3,2,6,7,4,6,8,9,0,1]
 
 QuickSort(A, 0, len(A) - 1)
 print("The final sorted array is :", A)
