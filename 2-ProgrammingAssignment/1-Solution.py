@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
  # This script is the solution to problem 1 of programming assignment 2
  # The question read as follows:
+ # Author: Lee Sutton
+ # Date: May 11th, 2016
 
 '''
 GENERAL DIRECTIONS:
@@ -50,7 +52,9 @@ just type the numeric answer in the following space.)
  entire array will then be returned from the function.
 '''
 def QuickSort(array, Left, Right):
-    print("New QuickSort call on the list: ", array[Left:Right + 1])
+    # Print statement for testing
+    #print("New QuickSort call on the list: ", array[Left:Right + 1])
+
     # First check the base case
     # If there is no difference between the right and left limits,
     # return the 0 for the number of comparisons
@@ -65,8 +69,8 @@ def QuickSort(array, Left, Right):
 
     # Run through the array
     for j in range(Left + 1, Right + 1):
-        print(array)
-        print("The i index: ", i)
+        #print(array)
+        #print("The i index: ", i)
 
         # If the array at j is less than the pivot, we swap it with A[i]
         if array[j] < Pivot:
@@ -80,17 +84,26 @@ def QuickSort(array, Left, Right):
     # After running through the swap loop, move the pivot to the partition index
     array[Left] = array[i - 1]
     array[i - 1] = Pivot
-    print(array)
+    #print(array)
 
     # Now call the function Recursively on the left and right halves around the partition
-    QuickSort(array, Left, i - 2)          # Left half
-    QuickSort(array, i, Right)      # Right half
+    LeftComparisons = QuickSort(array, Left, i - 2)          # Left half
+    RightComparisons = QuickSort(array, i, Right)            # Right half
 
-
+    # Add m-1 comparisons to the total number of comparisons and return the total
+    # number of comparisons
+    TotalComparisons = LeftComparisons + RightComparisons + (Right - Left)
+    return TotalComparisons
 
 # Main function
-# Start by testing the function with an input array
-A = [7,3,8,9,10,14,7,10,12,1,4,2,7,15,6,4,3,2,6,7,4,6,8,9,0,1]
+# Start by importing the data from the text file
+# open the integerarray text file and store it as the list to sort
+text_file = open("/Users/Lee/Algorithms/2-ProgrammingAssignment/Integer-array.txt", "r")
+list1 = text_file.readlines()
 
-QuickSort(A, 0, len(A) - 1)
+# convert all the values in list1 to integers
+A = [int(i) for i in list1]
+
+Comparisons = QuickSort(A, 0, len(A) - 1)
 print("The final sorted array is :", A)
+print("The total number of comparisons = ", Comparisons)
