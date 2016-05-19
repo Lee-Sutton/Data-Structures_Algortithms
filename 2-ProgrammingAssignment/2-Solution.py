@@ -55,7 +55,7 @@ def QuickSort(array, Left, Right):
         #print("The i index: ", i)
 
         # If the array at j is less than the pivot, we swap it with A[i]
-        if array[j] < Pivot:
+        if array[j] <= Pivot:
             # Temporarily store array[j] so that it can be swapped
             A_j = array[j]
             array[j] = array[i]
@@ -64,13 +64,13 @@ def QuickSort(array, Left, Right):
             i = i + 1
 
     # After running through the swap loop, move the pivot to the partition index
-    array[Right] = array[i - 1]
-    array[i - 1] = Pivot
+    array[Right] = array[i]
+    array[i] = Pivot
     #print(array)
 
     # Now call the function Recursively on the left and right halves around the partition
-    LeftComparisons = QuickSort(array, Left, i - 2)          # Left half
-    RightComparisons = QuickSort(array, i, Right)            # Right half
+    LeftComparisons = QuickSort(array, Left, i - 1)          # Left half
+    RightComparisons = QuickSort(array, i + 1, Right)            # Right half
 
     # Add m-1 comparisons to the total number of comparisons and return the total
     # number of comparisons
@@ -85,6 +85,8 @@ list1 = text_file.readlines()
 
 # convert all the values in list1 to integers
 A = [int(i) for i in list1]
+
+# A = [5,4,3,6]
 
 Comparisons = QuickSort(A, 0, len(A) - 1)
 print("The final sorted array is :", A)
