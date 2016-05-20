@@ -102,8 +102,19 @@ def QuickSort(array, Left, Right):
     if Left >= Right:
         return 0
 
-    # Assign the partition index i to be the left most value
+    # The algorithm is set up to use the right value as the pivot
+    # The median value will be first be found using the median function and
+    # the switched with the right most value so the right most value can be used
+    # as the pivot value
+    index, Pivot = median(array, Left, Right)
+
+    # Switch the median with the right most value
+    array[index] = array[Right]
+    array[Right] = Pivot
+
+    # Set i = to the left most value
     i = Left
+
 
     # Run through the array
     for j in range(Left, Right):
@@ -151,6 +162,7 @@ print("The total number of comparisons = ", Comparisons)
 '''
 
 # Test the median function
-A = [1,2,3,4,5,12,1,6,8,7,7,1]
-TestValue = median(A, 0, len(A)-1)
-print(TestValue)
+A = [1,2,3,4,5,4,1,6,8,7,7,5]
+Index, TestValue = median(A, 0, len(A)-1)
+print "The median value is: ", TestValue
+print "The index value is: ", Index
