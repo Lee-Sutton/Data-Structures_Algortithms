@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
- # This script is the solution to problem 1 of programming assignment 2
- # The question read as follows:
- # Author: Lee Sutton
- # Date: May 11th, 2016
-
+ # This script is the solution to problem 2 of programming assignment 2
+# Author: Lee Sutton
+# Date: May 11th, 2016
+# The question read as follows:
 '''
 GENERAL DIRECTIONS:
 ===================
