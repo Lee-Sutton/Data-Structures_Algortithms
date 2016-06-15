@@ -6,6 +6,9 @@ a fixed number of stacks and queues, write an algorithm to determine if a string
 is a palindrome
 */
 // Author Lee Sutton
+// The stack will be implemented in a header file "stack.h" as a class template.
+// The main function in this program will test the stack features and implement
+// the stack data structure will then be used to solve the palindrome problem
 
 #include <iostream>
 #include "stack.h"
@@ -34,6 +37,5 @@ int main()
 
   // Testing pop
   cout << charStack.pop() << endl;
-
   return 0;
 }
