@@ -16,5 +16,8 @@ int main()
   cout << "Testing Compilation" << endl;
   // Testing the Constructor
   Stack<char> TestStack(10);
+
+  // Testing pop
+  TestStack.pop();
   return 0;
 }
