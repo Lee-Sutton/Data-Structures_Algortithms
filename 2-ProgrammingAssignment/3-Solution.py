@@ -42,7 +42,7 @@ def median(array, Left, Right):
     # Check the base case, if the array has a length of two or less return the
     # first value in the array
     if arrayLength < 3:
-        return [Left, array[left]]
+        return [Left, array[Left]]
 
     # Store the first and last value
     LeftVal = array[Left]
@@ -62,7 +62,6 @@ def median(array, Left, Right):
         MidVal = array[Left + (Right - Left)/2]
         MidIndex = Left + (Right - Left)/2
 
-    print "The three values being checked are: ", LeftVal, MidVal, RightVal
     # Now check to see which value is the median
     # First check if the left most value is the median
     if (LeftVal <= RightVal and LeftVal >= MidVal) or (LeftVal >= RightVal and LeftVal <= MidVal):
@@ -145,7 +144,7 @@ def QuickSort(array, Left, Right):
     return TotalComparisons
 
 # Main function
-'''
+
 # Start by importing the data from the text file
 # open the integerarray text file and store it as the list to sort
 text_file = open("/Users/Lee/Algorithms/2-ProgrammingAssignment/Integer-array.txt", "r")
@@ -154,15 +153,14 @@ list1 = text_file.readlines()
 # convert all the values in list1 to integers
 A = [int(i) for i in list1]
 
-# A = [5,4,3,6]
+# A = [5,4,3,6,10]
 
 Comparisons = QuickSort(A, 0, len(A) - 1)
 print("The final sorted array is :", A)
 print("The total number of comparisons = ", Comparisons)
-'''
+
 
 # Test the median function
-A = [1,2,3,4,5,4,1,6,8,7,7,5]
 Index, TestValue = median(A, 0, len(A)-1)
 print "The median value is: ", TestValue
 print "The index value is: ", Index
