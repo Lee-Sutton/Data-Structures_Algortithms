@@ -47,6 +47,8 @@ int main()
   cin >> user_input;
   cout << "You inputted: "<< user_input << endl;
 
+  // If given more time i could add case sensitivity here use tolower
+
   // Now we run through the string to check if it is a palindrome
   // Start by creating a stack with a maxSize = the length of the string
   Stack<char> StringStack(user_input.length());
@@ -70,7 +72,7 @@ int main()
     }
   }
 
-  cout << user_input << " is a palindrome? " << palindrome << endl;
+  cout << user_input << " is a palindrome? 1 = true, 0 = false" << palindrome << endl;
 
   return 0;
 }
