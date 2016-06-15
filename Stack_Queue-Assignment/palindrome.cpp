@@ -11,13 +11,14 @@ is a palindrome
 // the stack data structure will then be used to solve the palindrome problem
 
 #include <iostream>
-//#include <string>
 #include "stack.h"
 
 using namespace std;
 
 int main()
 {
+  // Boolean to return if the word is a palindrome initially assumed to be true
+  bool palindrome = true;
 
   // Testing the Constructor
   Stack<int> TestStack(10);
@@ -44,7 +45,32 @@ int main()
   string user_input;
   cout << "Input a string: " << endl;
   cin >> user_input;
-  cout << user_input[0] << endl;
+  cout << "You inputted: "<< user_input << endl;
+
+  // Now we run through the string to check if it is a palindrome
+  // Start by creating a stack with a maxSize = the length of the string
+  Stack<char> StringStack(user_input.length());
+
+  // Create a for loop to run through the string and push all the characters
+  // onto the stack
+  for(int i = 0; i < user_input.length(); i++)
+  {
+    StringStack.push(user_input[i]);
+  }
+
+  // Create a for loop to run through and check if the input word is a palindrome
+  for(int i = 0; i < user_input.length(); i++)
+  {
+    // If the letters arent equal, break from the loop and set the palindrome
+    // boolean to false
+    if(StringStack.pop() != user_input[i])
+    {
+      palindrome = false;
+      break;
+    }
+  }
+
+  cout << user_input << " is a palindrome? " << palindrome << endl;
 
   return 0;
 }
