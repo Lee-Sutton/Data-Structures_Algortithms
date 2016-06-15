@@ -21,7 +21,7 @@ public:
   // Destructor
   ~Stack()
   {
-    delete [] listarray;
+    delete[] listarray;
   }
 
   // Reinitialize with clear
@@ -31,6 +31,16 @@ public:
     top = 0;
   }
 
+  // Push function to add values to the array
+  void push(const E& item)
+  {
+    // Check to make sure the stack is not full
+    assert(top!=maxSize);
+    // Add the item to the top of the list
+    listarray[top] = item;
+    top++;
+  }
+
   // Pop the E element from the top
   E pop()
   {
@@ -38,7 +48,7 @@ public:
     assert(top!=0);
 
     // Store the value at the top of the stack
-    int topVal = listarray[top];
+    int topVal = listarray[top - 1] ;
     // Subtract one from the top value
     top = top - 1;
     return topVal;
