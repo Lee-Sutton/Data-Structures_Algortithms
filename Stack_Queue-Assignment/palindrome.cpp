@@ -11,6 +11,7 @@ is a palindrome
 // the stack data structure will then be used to solve the palindrome problem
 
 #include <iostream>
+//#include <string>
 #include "stack.h"
 
 using namespace std;
@@ -37,5 +38,13 @@ int main()
 
   // Testing pop
   cout << charStack.pop() << endl;
+
+  // Now input a string and check if it is a palindrome
+  // Take input from the user
+  string user_input;
+  cout << "Input a string: " << endl;
+  cin >> user_input;
+  cout << user_input[0] << endl;
+
   return 0;
 }
