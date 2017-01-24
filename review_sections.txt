@@ -1,0 +1,7 @@
+Make notes on:
+- O(n) analysis
+- Linked list
+- Stack 
+- Queue
+- Deque
+- Three laws of recursion https://interactivepython.org/runestone/static/pythonds/Recursion/TheThreeLawsofRecursion.html
