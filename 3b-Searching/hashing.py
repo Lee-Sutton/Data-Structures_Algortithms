@@ -5,5 +5,5 @@ def hash(astring, tablesize):
 
 	return sum%tablesize
 
-table = [[],[],[],[],[],[],[],[],[],[],[]]
+
 print len(table)

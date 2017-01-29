@@ -23,7 +23,7 @@ class BinaryTree(object):
         # left child node down the tree if needed
         if self.right == None:
             self.right = BinaryTree(new_node)
-
+            
         else:
             temp = BinaryTree(new_node)
             temp.right = self.right
