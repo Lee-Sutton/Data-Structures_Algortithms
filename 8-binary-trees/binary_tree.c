@@ -21,6 +21,23 @@ struct node* new_node(int value){
   return Node;
 }
 
+// Inorder traversal
+void inOrder(struct node* root){
+  // Check if we have reached the end of the tree
+  if(!(root)){
+    return;
+  }
+  
+  // Traverse to the left
+  inOrder(root->left);
+  printf("%d\n", root->item);
+
+  // Traverse Right
+  inOrder(root->right);
+  return;
+
+}
+
 
 int main(){
   // Let's create a Binary search tree
@@ -36,4 +53,9 @@ int main(){
     current_node = current_node->left;
 
   }
+
+  // Let's try an inorder traversal
+  // Traverse left node, current node, then the right node
+  printf("Trying In order traversal\n");
+  inOrder(root);
 }
