@@ -39,11 +39,57 @@ void inOrder(struct node* root){
 }
 
 
+// insert_node function:
+//----------------------
+//  Inserts the input node in the binary tree by traversing left if the node
+//  is less than the current node or right if the node is greater.
+//    root: pointer to root of the binary search tre
+//    node_to_insert: node to insert in the binary search tree
+void insert_node(struct node* root, struct node* node_to_insert){
+  // Create a pointer to the store the current node as we traverse the tree
+  struct node* current_node = root;
+
+  // Store the previous node after we traverse past it
+  struct node* previous_node;
+
+  // Traverse the tree
+  while(current_node){
+    // If the node to insert is greater than the current node
+    // we traverse to the right
+    if(node_to_insert->item > current_node->item){
+      previous_node = current_node;
+      current_node = current_node->right;
+    }
+    else{
+      previous_node = current_node;
+      current_node = current_node->left;
+    }
+  }
+
+  // Once we reach the end of the tree, we insert the node
+  // it will be a child of the previous node
+  if(node_to_insert->item > previous_node->item){
+    previous_node->right = node_to_insert;
+  }
+  else{
+    previous_node->left = node_to_insert;
+  }
+
+  return;
+  
+}
+
+
 int main(){
   // Let's create a Binary search tree
   struct node* root = new_node(0);
-  root->left = new_node(1);
-  root->right = new_node(2);
+
+  // Let's test the insert function
+  insert_node(root, new_node(1));
+  insert_node(root, new_node(2));
+  insert_node(root, new_node(-5));
+  insert_node(root, new_node(-1));
+  insert_node(root, new_node(19));
 
   // Traverse the tree and print the value
   struct node* current_node = root;

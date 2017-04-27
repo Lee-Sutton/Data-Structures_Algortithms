@@ -103,14 +103,12 @@ int main(){
   Node* node1 = new Node(1);
   Node* node2 = new Node(2);
   Node * node3 = new Node(3);
-  Node * node4 = new Node(4);
 
   // Add these nodes to the stack
   test_stack.add_item(node);
   test_stack.add_item(node1);
   test_stack.add_item(node2);
   test_stack.add_item(node3);
-  test_stack.add_item(node4);
 
   // Test the pop function
   cout << (test_stack.pop())->item << endl;
