@@ -1,0 +1,14 @@
+* Dijkstra's Shortest Path Algorith
+- Directed or Undirected graphs
+- With weighted edges
+- Want to find the shortest path between the start and destination
+Step 1. Include s in a closed set and all immediate successors of s
+ and place all their distances in the open setpoint
+Step 2. Pick the open node of least cost
+
+- If the node that is picked is the destination (d) we stop
+- otherwise we compute all successors of n
+- add the distance from s to n+n edge to k
+- and if it improves on value in the open set, store it as a new value
+- Guarentees a shortest path
+*Assignment 2 - Djikstra shortest path algorithm*
