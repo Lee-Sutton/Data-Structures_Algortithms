@@ -65,6 +65,12 @@ int main()
     remove_duplicates(test_duplicates);
     printf("After removing duplicates");
     print_linked_list(test_duplicates);
+
+    printf("\n******************************************************************\n\n");
+    printf("Testing getting nth last item\n");
+    Node_t* nth_last = find_nth_last_node(*test_list, 2);
+    print_linked_list(test_list);
+    printf("2nd last item is: %d\n", nth_last->data);
 }
 
 /************************************************************************/

@@ -1,7 +1,7 @@
 [
 {
-  "directory": "/home/vmuser/Projects/Data-Structures_Algortithms/3a-Linked_lists/linked_list_c",
-  "command": "/usr/bin/cc     -std=gnu11 -o CMakeFiles/linked_list.dir/linked_list.c.o   -c /home/vmuser/Projects/Data-Structures_Algortithms/3a-Linked_lists/linked_list_c/linked_list.c",
-  "file": "/home/vmuser/Projects/Data-Structures_Algortithms/3a-Linked_lists/linked_list_c/linked_list.c"
+  "directory": "/Users/Lee/Algorithms/3a-Linked_lists/linked_list_c",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc     -std=gnu11 -o CMakeFiles/linked_list.dir/linked_list.c.o   -c /Users/Lee/Algorithms/3a-Linked_lists/linked_list_c/linked_list.c",
+  "file": "/Users/Lee/Algorithms/3a-Linked_lists/linked_list_c/linked_list.c"
 }
 ]
